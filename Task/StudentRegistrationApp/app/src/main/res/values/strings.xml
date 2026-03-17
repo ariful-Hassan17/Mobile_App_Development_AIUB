@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">StudentRegistrationApp</string>
+    <string name="student_registration_form">Student Registration \nForm</string>
+    <string name="student_id">Student ID</string>
+    <string name="enter_your_full_name">Enter Your Full Name</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="enter_your_age">Enter Your Age</string>
+    <string name="gender">Gender</string>
+    <string name="favorite_game">Favorite Game</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="football">Football</string>
+    <string name="basketball">Basketball</string>
+    <string name="badminton">Badminton</string>
+    <string name="cricket">Cricket</string>
+    <string name="submit">Submit</string>
+    <string name="select_date">Select Date</string>
+    <string name="date_of_birth">Date of Birth : </string>
+    <string name="dd_mm_year">dd/mm/year</string>
+
+    <string-array name="country">
+        <item>Select Country</item>
+        <item>Bangladesh</item>
+        <item>India</item>
+        <item>USA</item>
+        <item>Iran</item>
+        <item>UK</item>
+        <item>Canada</item>
+    </string-array>
+
+</resources>
