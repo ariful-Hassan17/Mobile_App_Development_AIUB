@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/navigationBar"
+        android:layout_centerHorizontal="true">
+
+    <ImageView
+        android:id="@+id/aiubLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/aiub_logo"/>
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aiubLogo"
+        android:text="@string/welcome_back"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/innerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/navigationBar"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+
+
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:hint="@string/enter_your_name"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:autofillHints="username"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:hint="@string/enter_your_password"
+        android:autofillHints="password"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:inputType="textPassword"
+        android:layout_below="@id/userName"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/forgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_alignParentEnd="true"
+        android:text="@string/forgot_password"
+        android:textSize="16sp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:text="@string/login"
+        android:textSize="16sp"
+        android:layout_below="@id/forgetPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#3F51B5"
+        android:textColor="#FFFFFF" />
+
+
+
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:foregroundTint="#3F43B5"/>
+
+    <RelativeLayout
+        android:id="@+id/userProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navigationBar"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/name"
+            android:text="@string/logout"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#D91C33"
+            android:textColor="#FFFFFF" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

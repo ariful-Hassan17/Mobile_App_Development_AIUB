@@ -9,11 +9,15 @@ import android.widget.Checkable
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Spinner
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.RadioButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.util.Calendar
+import androidx.core.graphics.toColorInt
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.password)
         val age = findViewById<EditText>(R.id.age)
         val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
+        val gender = findViewById<TextView>(R.id.gender)
         val favGame = arrayOf(findViewById<CheckBox>(R.id.fbFavoriteGame),
                                 findViewById<CheckBox>(R.id.cricFavoriteGame),
                                 findViewById<CheckBox>(R.id.bdFavoriteGame),
@@ -108,8 +113,52 @@ class MainActivity : AppCompatActivity() {
                     return@setOnClickListener
                 }
 
+                radioGroup.checkedRadioButtonId == -1 -> {
+                    Toast.makeText(
+                        this,
+                        "select you Gender",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    gender.setTextColor("#FF0000".toColorInt())
+                    radioGroup.requestFocus()
+                    return@setOnClickListener
+                }
+
+                spinnerReg.selectedItemPosition == 0 -> {
+                    Toast.makeText(
+                        this,
+                        "select your country",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    val selectedView = spinnerReg.selectedView as? TextView
+                    selectedView?.setTextColor("#FF0000".toColorInt())
+                    radioGroup.requestFocus()
+                    return@setOnClickListener
+                }
+
+                favGame.none { it.isChecked } -> {
+                    Toast.makeText(
+                        this,
+                        "Please select at least one favorite game",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    return@setOnClickListener
+                }
+
+                else -> {
+                    val message = """
+                    Student ID: ${studentId.text}
+                    Name: ${name.text}
+                    Email: ${email.text}
+                    Age: ${age.text}
+                    Gender: ${findViewById<RadioButton>(radioGroup.checkedRadioButtonId).text.toString()}
+                    """.trimIndent()
 
 
+                    Toast.makeText(this,
+                        message,
+                        Toast.LENGTH_LONG).show()
+                }
             }
 
         }

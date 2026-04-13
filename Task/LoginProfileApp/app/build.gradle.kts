@@ -3,14 +3,14 @@ plugins {
 }
 
 android {
-    namespace = "com.example.studentregistrationapp"
+    namespace = "com.example.loginprofileapp"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.studentregistrationapp"
-        minSdk = 24
+        applicationId = "com.example.loginprofileapp"
+        minSdk = 29
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -39,7 +39,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.ui.graphics)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
