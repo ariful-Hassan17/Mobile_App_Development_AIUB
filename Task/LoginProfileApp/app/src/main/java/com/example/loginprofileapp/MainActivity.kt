@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
 
-            if(userName.text.toString() == "Ariful" && passWords.text.toString() == "1234") {
+            if(userName.text.trim().toString() == "Ariful" && passWords.text.trim().toString() == "1234") {
                 navigationBar.visibility = View.GONE
                 loggingForm.visibility = View.GONE
                 progressBar.visibility = View.VISIBLE
@@ -60,6 +60,16 @@ class MainActivity : AppCompatActivity() {
             }
             else
                 Toast.makeText(this, "incorrect user name or password", Toast.LENGTH_SHORT).show()
+        }
+
+        logout.setOnClickListener {
+            navigationBar.visibility = View.VISIBLE
+            loggingForm.visibility = View.VISIBLE
+            userProfile.visibility = View.GONE
+            welcome.text = "Welcome Back"
+            userName.text.clear()
+            passWords.text.clear()
+
         }
 
 
