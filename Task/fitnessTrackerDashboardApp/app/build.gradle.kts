@@ -3,14 +3,16 @@ plugins {
 }
 
 android {
-    namespace = "com.example.fitnesstrackerdashboardapp"
+    namespace = "com.example.fitnesstrackerapp"
     compileSdk {
-        version = release(36)
+        version = release(36) {
+            minorApiLevel = 1
+        }
     }
 
     defaultConfig {
-        applicationId = "com.example.fitnesstrackerdashboardapp"
-        minSdk = 29
+        applicationId = "com.example.fitnesstrackerapp"
+        minSdk = 24
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
